@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Biryani Crave - Authentic Taste, Home Delivered. Order delicious Chicken, Veg, Egg, and Paneer Biryanis, Maharashtrian Specials (Pitla Bhakari), and Desserts (Kunafa) directly via WhatsApp.">
+  <title>Biryani Crave - Authentic Taste, Home Delivered</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Loading Screen -->
+  <div id="loader" class="loader-overlay">
+    <div class="loader-content">
+      <div class="steaming-pot">
+        <svg viewBox="0 0 100 100" class="pot-svg">
+          <!-- Steams -->
+          <path d="M35 25 Q 38 15, 35 5" class="steam steam-1" />
+          <path d="M50 25 Q 53 10, 50 2" class="steam steam-2" />
+          <path d="M65 25 Q 68 15, 65 5" class="steam steam-3" />
+          <!-- Pot Lid -->
+          <path d="M25 35 L75 35 A 8 8 0 0 0 75 25 L25 25 A 8 8 0 0 0 25 35 Z" fill="#D4AF37" />
+          <rect x="45" y="18" width="10" height="7" rx="2" fill="#FF6B00" />
+          <!-- Pot Body -->
+          <path d="M20 40 L80 40 Q 82 75, 70 85 L30 85 Q 18 75, 20 40 Z" fill="#b0521e" />
+          <!-- Rope Accent -->
+          <path d="M20 45 L80 45" stroke="#D4AF37" stroke-width="3" stroke-dasharray="3,3" />
+        </svg>
+      </div>
+      <h2 class="loader-title">BIRYANI CRAVE</h2>
+      <p class="loader-subtitle">Preparing Authentic Taste...</p>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="#home" class="logo-area">
+        <img class="logo-img" src="assets/logo.jpg" alt="Biryani Crave Logo">
+        <div class="logo-text">
+          <span class="brand-name">BIRYANI <span class="accent-color">CRAVE</span></span>
+          <span class="brand-tagline">AUTHENTIC TASTE, HOME DELIVERED</span>
+        </div>
+      </a>
+      
+      <!-- Hamburger Menu for Mobile -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">Our Heritage</a>
+        <a href="#menu" class="nav-link">Digital Menu</a>
+        <a href="#physical-menu" class="nav-link">Menu Card</a>
+        <a href="#contact" class="nav-link">Order Form</a>
+        <a href="https://wa.me/919975361445?text=Hi%20Biryani%20Crave%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="nav-cta-btn">Order Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section with Carousel -->
+  <section id="home" class="hero-section">
+    <!-- Carousel Slides Container -->
+    <div class="hero-carousel" id="heroCarousel">
+      
+      <!-- Slide 1: Chicken Biryani -->
+      <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)), url('assets/hero_biryani.png');">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <svg class="badge-icon" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#D4AF37"/></svg>
+            <span>Signature Dum Biryani</span>
+          </div>
+          <h2 class="hero-title">Royal Chicken <br>Dum <span class="gold-gradient-text">Biryani Special</span></h2>
+          <p class="hero-description">Experience the legendary taste of slow-cooked long-grain Basmati rice, layered with succulent marinated chicken and hand-ground Royal spices.</p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-primary" onclick="addCarouselItemToForm('Chicken Biryani')">
+              <svg class="btn-icon" viewBox="0 0 24 24"><path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2M6 9H18V11H6V9M6 5H18V7H6V5M6 13H14V15H6V13Z" fill="currentColor"/></svg>
+              Order Signature Biryani
+            </button>
+            <a href="#menu" class="btn btn-secondary">Explore Menu</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2: Egg Biryani -->
+      <div class="carousel-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)), url('assets/egg_biryani.png');">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <svg class="badge-icon" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#D4AF37"/></svg>
+            <span>Classic Spice Layer</span>
+          </div>
+          <h2 class="hero-title">Aromatic Spiced <br>Egg <span class="gold-gradient-text">Biryani Delight</span></h2>
+          <p class="hero-description">A flavorful blend of slow-cooked basmati rice, caramelized onions, fresh mint, and hard-boiled eggs coated in our unique masala blend.</p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-primary" onclick="addCarouselItemToForm('Egg Biryani')">
+              <svg class="btn-icon" viewBox="0 0 24 24"><path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2M6 9H18V11H6V9M6 5H18V7H6V5M6 13H14V15H6V13Z" fill="currentColor"/></svg>
+              Order Egg Biryani
+            </button>
+            <a href="#menu" class="btn btn-secondary">Explore Menu</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: Paneer Biryani -->
+      <div class="carousel-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)), url('assets/paneer_biryani.png');">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <svg class="badge-icon" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#D4AF37"/></svg>
+            <span>Vegetarian Royalty</span>
+          </div>
+          <h2 class="hero-title">Royal Paneer <br>Slow Dum <span class="gold-gradient-text">Biryani Feast</span></h2>
+          <p class="hero-description">Rich and creamy paneer cubes layered with saffron-tinted long-grain rice, fresh herbs, and toasted cashew nuts for a luxurious vegetarian feast.</p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-primary" onclick="addCarouselItemToForm('Paneer Biryani')">
+              <svg class="btn-icon" viewBox="0 0 24 24"><path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2M6 9H18V11H6V9M6 5H18V7H6V5M6 13H14V15H6V13Z" fill="currentColor"/></svg>
+              Order Paneer Biryani
+            </button>
+            <a href="#menu" class="btn btn-secondary">Explore Menu</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4: Veg Biryani -->
+      <div class="carousel-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)), url('assets/veg_biryani.png');">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <svg class="badge-icon" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#D4AF37"/></svg>
+            <span>Fresh & Healthy</span>
+          </div>
+          <h2 class="hero-title">Garden Fresh <br>Vegetable <span class="gold-gradient-text">Dum Biryani</span></h2>
+          <p class="hero-description">A healthy and colorful mixture of green beans, carrots, peas, and potatoes slow-cooked in earthenware clay pots with fragrant basmati rice.</p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-primary" onclick="addCarouselItemToForm('Veg Biryani')">
+              <svg class="btn-icon" viewBox="0 0 24 24"><path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2M6 9H18V11H6V9M6 5H18V7H6V5M6 13H14V15H6V13Z" fill="currentColor"/></svg>
+              Order Veg Biryani
+            </button>
+            <a href="#menu" class="btn btn-secondary">Explore Menu</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5: Pitla Bhakari -->
+      <div class="carousel-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)), url('assets/pitla_bhakari.png');">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <svg class="badge-icon" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#D4AF37"/></svg>
+            <span>Maharashtrian Pride</span>
+          </div>
+          <h2 class="hero-title">Traditional Garlic <br><span class="gold-gradient-text">Pitla Bhakari</span></h2>
+          <p class="hero-description">A rustic Maharashtrian classic chickpea curry simmered with green chillies, ginger, and garlic, served with thick, hand-pressed Jowar flatbreads.</p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-primary" onclick="addCarouselItemToForm('Pitla Bhakari')">
+              <svg class="btn-icon" viewBox="0 0 24 24"><path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2M6 9H18V11H6V9M6 5H18V7H6V5M6 13H14V15H6V13Z" fill="currentColor"/></svg>
+              Order Pitla Bhakari
+            </button>
+            <a href="#menu" class="btn btn-secondary">Explore Menu</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 6: Kunafa -->
+      <div class="carousel-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)), url('assets/kunafa.png');">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <svg class="badge-icon" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#D4AF37"/></svg>
+            <span>Middle-Eastern Treat</span>
+          </div>
+          <h2 class="hero-title">Golden Crispy <br>Cheese <span class="gold-gradient-text">Kunafa Dessert</span></h2>
+          <p class="hero-description">Crispy shredded vermicelli pastry baked with a gooey mozzarella cheese center, drizzled with sweet rosewater sugar syrup and crushed pistachios.</p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-primary" onclick="addCarouselItemToForm('Kunafa')">
+              <svg class="btn-icon" viewBox="0 0 24 24"><path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2M6 9H18V11H6V9M6 5H18V7H6V5M6 13H14V15H6V13Z" fill="currentColor"/></svg>
+              Order Kunafa Dessert
+            </button>
+            <a href="#menu" class="btn btn-secondary">Explore Menu</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Carousel Controls (Arrows) -->
+    <button class="carousel-arrow prev" id="carouselPrev" aria-label="Previous Slide">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="currentColor"/></svg>
+    </button>
+    <button class="carousel-arrow next" id="carouselNext" aria-label="Next Slide">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="currentColor"/></svg>
+    </button>
+
+    <!-- Carousel Indicators (Dots) -->
+    <div class="carousel-dots" id="carouselDots">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+      <span class="dot" data-slide="3"></span>
+      <span class="dot" data-slide="4"></span>
+      <span class="dot" data-slide="5"></span>
+    </div>
+
+    <!-- Floating Quick Info Bar -->
+    <div class="hero-info-bar">
+      <div class="info-item">
+        <span class="info-label">Order Hours</span>
+        <span class="info-value">11:00 AM - 11:00 PM</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Contact Delivery</span>
+        <span class="info-value">+91 9975361445</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Hygiene Rank</span>
+        <span class="info-value">FSSAI Certified</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Heritage / About Us Section -->
+  <section id="about" class="about-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tagline">ABOUT BIRYANI CRAVE</span>
+        <h2 class="section-title">The Art of Slow Dum Cooking</h2>
+        <div class="section-divider"></div>
+      </div>
+      
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="card-icon-wrapper">
+            <!-- Clay Pot Icon -->
+            <svg class="about-icon" viewBox="0 0 24 24"><path d="M19 19c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V9c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v10zM12 2A5 5 0 007 7h10a5 5 0 00-5-5z" fill="currentColor"/></svg>
+          </div>
+          <h3 class="card-title">Traditional Clay Pots</h3>
+          <p class="card-description">We slow-cook our biryanis in earthenware clay pots to seal in the steam and intense aromatics, ensuring a rich texture.</p>
+        </div>
+
+        <div class="about-card">
+          <div class="card-icon-wrapper">
+            <!-- Spice Icon -->
+            <svg class="about-icon" viewBox="0 0 24 24"><path d="M12 2c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l2.79-2.79C10.09 18.66 11.03 19 12 19c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" fill="currentColor"/></svg>
+          </div>
+          <h3 class="card-title">100% Homemade Spices</h3>
+          <p class="card-description">No artificial flavors or synthetic colors. We source whole spices and hand-grind our secret masala mixes daily.</p>
+        </div>
+
+        <div class="about-card">
+          <div class="card-icon-wrapper">
+            <!-- Delivery Icon -->
+            <svg class="about-icon" viewBox="0 0 24 24"><path d="M19 15h-1.5c0-1.38-1.12-2.5-2.5-2.5s-2.5 1.12-2.5 2.5H9c0-1.38-1.12-2.5-2.5-2.5S4 13.62 4 15H3c-.55 0-1 .45-1 1v2c0 1.1.9 2 2 2h1.1c.45 1.18 1.58 2 2.9 2s2.45-.82 2.9-2h4.2c.45 1.18 1.58 2 2.9 2s2.45-.82 2.9-2H20c1.1 0 2-.9 2-2v-4.5c0-.83-.67-1.5-1.5-1.5zM6.5 19c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm8.5-5.5V11H6.5v2.5H15zm0 5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-2.5h-3v-3.5h3v3.5z" fill="currentColor"/></svg>
+          </div>
+          <h3 class="card-title">Hot Home Delivery</h3>
+          <p class="card-description">Straight from the flame to your home. Our custom insulation containers ensure your meal arrives piping hot and fresh.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Digital Interactive Menu Section -->
+  <section id="menu" class="menu-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tagline">OUR FRESH SELECTIONS</span>
+        <h2 class="section-title">Explore Digital Menu</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- Category Filter Chips -->
+      <div class="menu-filters">
+        <button class="filter-btn active" data-filter="all">All Items</button>
+        <button class="filter-btn" data-filter="biryani">Biryani</button>
+        <button class="filter-btn" data-filter="special">Maharashtrian Special</button>
+        <button class="filter-btn" data-filter="dessert">Desserts</button>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-grid" id="menuGrid">
+        
+        <!-- Chicken Biryani -->
+        <div class="menu-item-card" data-category="biryani" data-type="non-veg">
+          <div class="item-img-container">
+            <img class="item-img" src="assets/hero_biryani.png" alt="Chicken Biryani">
+            <span class="type-badge non-veg">Non-Veg</span>
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-title">Chicken Biryani</h3>
+              <span class="item-price">₹280</span>
+            </div>
+            <p class="item-description">Fragrant Basmati rice slow-cooked with tender, marinated bone-in chicken, infused with saffron, fresh mint, and chef's hand-ground secret spices.</p>
+            <div class="item-footer">
+              <button class="add-to-form-btn" data-name="Chicken Biryani" data-price="280">Add to Form</button>
+              <a href="https://wa.me/919975361445?text=Hi%20Biryani%20Crave%2C%20I%20would%20like%20to%20order%201x%20Chicken%20Biryani." target="_blank" class="quick-order-btn">
+                <svg viewBox="0 0 24 24" class="wa-icon"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.333 4.993L2 22l5.233-1.371a9.936 9.936 0 004.777 1.217h.005c5.505 0 9.989-4.478 9.99-9.984A9.998 9.998 0 0012.012 2zm5.781 14.19c-.244.686-1.42 1.348-1.956 1.411-.536.064-1.077.307-3.447-.627-2.85-1.125-4.688-4.013-4.831-4.202-.143-.19-1.139-1.517-1.139-2.894s.714-2.05.97-2.31c.256-.26.557-.325.74-.325h.528c.168 0 .393-.064.612.464.225.54.767 1.868.835 2.005.068.137.113.297.022.478-.09.18-.135.297-.27.458-.136.16-.285.358-.407.481-.136.137-.28.286-.12.56.16.275.71 1.171 1.523 1.895.813.725 1.5.949 1.71 1.055.21.106.333.09.458-.053.125-.144.536-.624.681-.837.143-.213.29-.18.491-.106.203.074 1.282.604 1.503.714.221.11.368.163.421.256.053.093.053.54-.191 1.226z" fill="currentColor"/></svg>
+                Instant Buy
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Egg Biryani -->
+        <div class="menu-item-card" data-category="biryani" data-type="non-veg">
+          <div class="item-img-container">
+            <img class="item-img" src="assets/egg_biryani.png" alt="Egg Biryani">
+            <span class="type-badge non-veg">Non-Veg</span>
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-title">Egg Biryani</h3>
+              <span class="item-price">₹220</span>
+            </div>
+            <p class="item-description">Long-grain aromatic rice slow-cooked with hard-boiled eggs coated in rich spices, caramelized onions, mint, and fresh coriander leaves.</p>
+            <div class="item-footer">
+              <button class="add-to-form-btn" data-name="Egg Biryani" data-price="220">Add to Form</button>
+              <a href="https://wa.me/919975361445?text=Hi%20Biryani%20Crave%2C%20I%20would%20like%20to%20order%201x%20Egg%20Biryani." target="_blank" class="quick-order-btn">
+                <svg viewBox="0 0 24 24" class="wa-icon"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.333 4.993L2 22l5.233-1.371a9.936 9.936 0 004.777 1.217h.005c5.505 0 9.989-4.478 9.99-9.984A9.998 9.998 0 0012.012 2zm5.781 14.19c-.244.686-1.42 1.348-1.956 1.411-.536.064-1.077.307-3.447-.627-2.85-1.125-4.688-4.013-4.831-4.202-.143-.19-1.139-1.517-1.139-2.894s.714-2.05.97-2.31c.256-.26.557-.325.74-.325h.528c.168 0 .393-.064.612.464.225.54.767 1.868.835 2.005.068.137.113.297.022.478-.09.18-.135.297-.27.458-.136.16-.285.358-.407.481-.136.137-.28.286-.12.56.16.275.71 1.171 1.523 1.895.813.725 1.5.949 1.71 1.055.21.106.333.09.458-.053.125-.144.536-.624.681-.837.143-.213.29-.18.491-.106.203.074 1.282.604 1.503.714.221.11.368.163.421.256.053.093.053.54-.191 1.226z" fill="currentColor"/></svg>
+                Instant Buy
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paneer Biryani -->
+        <div class="menu-item-card" data-category="biryani" data-type="veg">
+          <div class="item-img-container">
+            <img class="item-img" src="assets/paneer_biryani.png" alt="Paneer Biryani">
+            <span class="type-badge veg">Veg</span>
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-title">Paneer Biryani</h3>
+              <span class="item-price">₹250</span>
+            </div>
+            <p class="item-description">Royal vegetarian feast. Long-grain rice dum-cooked with tender, spiced paneer cubes, fresh mint leaves, cashew nuts, and heavy cream.</p>
+            <div class="item-footer">
+              <button class="add-to-form-btn" data-name="Paneer Biryani" data-price="250">Add to Form</button>
+              <a href="https://wa.me/919975361445?text=Hi%20Biryani%20Crave%2C%20I%20would%20like%20to%20order%201x%20Paneer%20Biryani." target="_blank" class="quick-order-btn">
+                <svg viewBox="0 0 24 24" class="wa-icon"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.333 4.993L2 22l5.233-1.371a9.936 9.936 0 004.777 1.217h.005c5.505 0 9.989-4.478 9.99-9.984A9.998 9.998 0 0012.012 2zm5.781 14.19c-.244.686-1.42 1.348-1.956 1.411-.536.064-1.077.307-3.447-.627-2.85-1.125-4.688-4.013-4.831-4.202-.143-.19-1.139-1.517-1.139-2.894s.714-2.05.97-2.31c.256-.26.557-.325.74-.325h.528c.168 0 .393-.064.612.464.225.54.767 1.868.835 2.005.068.137.113.297.022.478-.09.18-.135.297-.27.458-.136.16-.285.358-.407.481-.136.137-.28.286-.12.56.16.275.71 1.171 1.523 1.895.813.725 1.5.949 1.71 1.055.21.106.333.09.458-.053.125-.144.536-.624.681-.837.143-.213.29-.18.491-.106.203.074 1.282.604 1.503.714.221.11.368.163.421.256.053.093.053.54-.191 1.226z" fill="currentColor"/></svg>
+                Instant Buy
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Veg Biryani -->
+        <div class="menu-item-card" data-category="biryani" data-type="veg">
+          <div class="item-img-container">
+            <img class="item-img" src="assets/veg_biryani.png" alt="Veg Biryani">
+            <span class="type-badge veg">Veg 🌱</span>
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-title">Veg Biryani</h3>
+              <span class="item-price">₹200</span>
+            </div>
+            <p class="item-description">Delightful combination of fresh green beans, carrots, potatoes, and green peas layered with saffron-infused rice and dum-cooked to lock in sweetness.</p>
+            <div class="item-footer">
+              <button class="add-to-form-btn" data-name="Veg Biryani" data-price="200">Add to Form</button>
+              <a href="https://wa.me/919975361445?text=Hi%20Biryani%20Crave%2C%20I%20would%20like%20to%20order%201x%20Veg%20Biryani." target="_blank" class="quick-order-btn">
+                <svg viewBox="0 0 24 24" class="wa-icon"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.333 4.993L2 22l5.233-1.371a9.936 9.936 0 004.777 1.217h.005c5.505 0 9.989-4.478 9.99-9.984A9.998 9.998 0 0012.012 2zm5.781 14.19c-.244.686-1.42 1.348-1.956 1.411-.536.064-1.077.307-3.447-.627-2.85-1.125-4.688-4.013-4.831-4.202-.143-.19-1.139-1.517-1.139-2.894s.714-2.05.97-2.31c.256-.26.557-.325.74-.325h.528c.168 0 .393-.064.612.464.225.54.767 1.868.835 2.005.068.137.113.297.022.478-.09.18-.135.297-.27.458-.136.16-.285.358-.407.481-.136.137-.28.286-.12.56.16.275.71 1.171 1.523 1.895.813.725 1.5.949 1.71 1.055.21.106.333.09.458-.053.125-.144.536-.624.681-.837.143-.213.29-.18.491-.106.203.074 1.282.604 1.503.714.221.11.368.163.421.256.053.093.053.54-.191 1.226z" fill="currentColor"/></svg>
+                Instant Buy
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pitla Bhakari -->
+        <div class="menu-item-card" data-category="special" data-type="veg">
+          <div class="item-img-container">
+            <img class="item-img" src="assets/pitla_bhakari.png" alt="Pitla Bhakari">
+            <span class="type-badge veg">Veg 🌱</span>
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-title">Pitla Bhakari</h3>
+              <span class="item-price">₹150</span>
+            </div>
+            <p class="item-description">Authentic rustic Maharashtrian comfort meal. Spiced chickpea flour curry (Pitla) with garlic and green chillies, served with two soft Jowar Bhakari flatbreads.</p>
+            <div class="item-footer">
+              <button class="add-to-form-btn" data-name="Pitla Bhakari" data-price="150">Add to Form</button>
+              <a href="https://wa.me/919975361445?text=Hi%20Biryani%20Crave%2C%20I%20would%20like%20to%20order%201x%20Pitla%20Bhakari." target="_blank" class="quick-order-btn">
+                <svg viewBox="0 0 24 24" class="wa-icon"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.333 4.993L2 22l5.233-1.371a9.936 9.936 0 004.777 1.217h.005c5.505 0 9.989-4.478 9.99-9.984A9.998 9.998 0 0012.012 2zm5.781 14.19c-.244.686-1.42 1.348-1.956 1.411-.536.064-1.077.307-3.447-.627-2.85-1.125-4.688-4.013-4.831-4.202-.143-.19-1.139-1.517-1.139-2.894s.714-2.05.97-2.31c.256-.26.557-.325.74-.325h.528c.168 0 .393-.064.612.464.225.54.767 1.868.835 2.005.068.137.113.297.022.478-.09.18-.135.297-.27.458-.136.16-.285.358-.407.481-.136.137-.28.286-.12.56.16.275.71 1.171 1.523 1.895.813.725 1.5.949 1.71 1.055.21.106.333.09.458-.053.125-.144.536-.624.681-.837.143-.213.29-.18.491-.106.203.074 1.282.604 1.503.714.221.11.368.163.421.256.053.093.053.54-.191 1.226z" fill="currentColor"/></svg>
+                Instant Buy
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kunafa -->
+        <div class="menu-item-card" data-category="dessert" data-type="veg">
+          <div class="item-img-container">
+            <img class="item-img" src="assets/kunafa.png" alt="Kunafa Dessert">
+            <span class="type-badge veg">Veg 🌱</span>
+          </div>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-title">Kunafa</h3>
+              <span class="item-price">₹180</span>
+            </div>
+            <p class="item-description">Middle-Eastern delicacy. Shredded crispy wheat pastry baked with a gooey, warm mozzarella cheese center, drizzled with rose-infused sugar syrup and pistachios.</p>
+            <div class="item-footer">
+              <button class="add-to-form-btn" data-name="Kunafa" data-price="180">Add to Form</button>
+              <a href="https://wa.me/919975361445?text=Hi%20Biryani%20Crave%2C%20I%20would%20like%20to%20order%201x%20Kunafa." target="_blank" class="quick-order-btn">
+                <svg viewBox="0 0 24 24" class="wa-icon"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.333 4.993L2 22l5.233-1.371a9.936 9.936 0 004.777 1.217h.005c5.505 0 9.989-4.478 9.99-9.984A9.998 9.998 0 0012.012 2zm5.781 14.19c-.244.686-1.42 1.348-1.956 1.411-.536.064-1.077.307-3.447-.627-2.85-1.125-4.688-4.013-4.831-4.202-.143-.19-1.139-1.517-1.139-2.894s.714-2.05.97-2.31c.256-.26.557-.325.74-.325h.528c.168 0 .393-.064.612.464.225.54.767 1.868.835 2.005.068.137.113.297.022.478-.09.18-.135.297-.27.458-.136.16-.285.358-.407.481-.136.137-.28.286-.12.56.16.275.71 1.171 1.523 1.895.813.725 1.5.949 1.71 1.055.21.106.333.09.458-.053.125-.144.536-.624.681-.837.143-.213.29-.18.491-.106.203.074 1.282.604 1.503.714.221.11.368.163.421.256.053.093.053.54-.191 1.226z" fill="currentColor"/></svg>
+                Instant Buy
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Physical Menu Card Section -->
+  <section id="physical-menu" class="physical-menu-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tagline">CLASSIC PRESENTATION</span>
+        <h2 class="section-title">View Physical Menu Card</h2>
+        <div class="section-divider"></div>
+      </div>
+      
+      <div class="physical-menu-wrapper">
+        <div class="physical-menu-card-container" id="menuCardContainer">
+          <img class="physical-menu-img" src="assets/menu_card.jpg" alt="Biryani Crave Menu Card">
+          <div class="overlay-hover">
+            <svg class="zoom-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="currentColor"/></svg>
+            <span>Click to Zoom & View Registration</span>
+          </div>
+        </div>
+        <p class="physical-menu-info">FSSAI Reg. No. 21526080002005 | MSME Udyam No. UDYAM-MH-26-1177542</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal for Physical Menu Card -->
+  <div id="lightboxModal" class="modal">
+    <span class="modal-close" id="modalClose">&times;</span>
+    <img class="modal-content" id="modalImg" src="" alt="Zoomed Menu Card">
+    <div id="modalCaption"></div>
+  </div>
+
+  <!-- Custom Dynamic Order Form & Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="section-container">
+      <div class="contact-grid">
+        
+        <!-- Left Column: Contact info and hours -->
+        <div class="contact-info-panel">
+          <div class="section-header align-left">
+            <span class="section-tagline">GET IN TOUCH</span>
+            <h2 class="section-title">Home Delivery Details</h2>
+            <div class="section-divider align-left"></div>
+          </div>
+          <p class="contact-text">We make sure your cravings are satisfied instantly. Fill out the quick checkout form, and it will format and compile your order directly into a WhatsApp chat message with us!</p>
+          
+          <div class="contact-details-list">
+            
+            <div class="contact-detail-item">
+              <div class="icon-box">
+                <!-- Phone Icon -->
+                <svg viewBox="0 0 24 24"><path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .3l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.6 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" fill="currentColor"/></svg>
+              </div>
+              <div>
+                <h4>WhatsApp Delivery</h4>
+                <p>+91 9975361445</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="icon-box">
+                <!-- Email Icon -->
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/></svg>
+              </div>
+              <div>
+                <h4>Official Email</h4>
+                <p>mujahidmohsin49@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="icon-box">
+                <!-- Award/Badge Icon -->
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z" fill="currentColor"/></svg>
+              </div>
+              <div>
+                <h4>Official Licenses</h4>
+                <p>FSSAI: 21526080002005</p>
+                <p>MSME: UDYAM-MH-26-1177542</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Order Form -->
+        <div class="order-form-panel">
+          <h3>Build Your Delivery Order</h3>
+          <form id="orderForm">
+            <!-- Name & Phone -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="custName">Your Name *</label>
+                <input type="text" id="custName" placeholder="Enter your full name" required>
+              </div>
+              <div class="form-group">
+                <label for="custPhone">Contact Phone *</label>
+                <input type="tel" id="custPhone" placeholder="Enter mobile number" required>
+              </div>
+            </div>
+
+            <!-- Delivery Address -->
+            <div class="form-group">
+              <label for="custAddress">Delivery Address *</label>
+              <textarea id="custAddress" rows="3" placeholder="Enter your home or delivery address details" required></textarea>
+            </div>
+
+            <!-- Dynamic Selected Items List -->
+            <div class="selected-items-section">
+              <label>Selected Items to Order</label>
+              <div id="selectedItemsContainer" class="selected-items-container">
+                <p class="empty-cart-msg">No items added yet. Click "Add to Form" on any menu item above to build your order!</p>
+              </div>
+              <div class="order-summary-row hidden" id="orderSummaryRow">
+                <span>Estimated Total:</span>
+                <span class="summary-total" id="summaryTotal">₹0</span>
+              </div>
+            </div>
+
+            <!-- Payment Mode Preference -->
+            <div class="form-group">
+              <label for="paymentMode">Preferred Payment Method</label>
+              <select id="paymentMode">
+                <option value="Cash on Delivery">Cash on Delivery (COD)</option>
+                <option value="UPI / PhonePe / GPay">UPI (PhonePe / GPay / Paytm)</option>
+              </select>
+            </div>
+
+            <!-- Order Submit -->
+            <button type="submit" class="btn btn-primary btn-block" id="submitOrderBtn">
+              <svg viewBox="0 0 24 24" class="btn-icon"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.333 4.993L2 22l5.233-1.371a9.936 9.936 0 004.777 1.217h.005c5.505 0 9.989-4.478 9.99-9.984A9.998 9.998 0 0012.012 2zm5.781 14.19c-.244.686-1.42 1.348-1.956 1.411-.536.064-1.077.307-3.447-.627-2.85-1.125-4.688-4.013-4.831-4.202-.143-.19-1.139-1.517-1.139-2.894s.714-2.05.97-2.31c.256-.26.557-.325.74-.325h.528c.168 0 .393-.064.612.464.225.54.767 1.868.835 2.005.068.137.113.297.022.478-.09.18-.135.297-.27.458-.136.16-.285.358-.407.481-.136.137-.28.286-.12.56.16.275.71 1.171 1.523 1.895.813.725 1.5.949 1.71 1.055.21.106.333.09.458-.053.125-.144.536-.624.681-.837.143-.213.29-.18.491-.106.203.074 1.282.604 1.503.714.221.11.368.163.421.256.053.093.053.54-.191 1.226z" fill="currentColor"/></svg>
+              Confirm and Order via WhatsApp
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column brand-col">
+        <div class="footer-logo">
+          <img class="footer-logo-img" src="assets/logo.jpg" alt="Biryani Crave Logo">
+          <span>BIRYANI CRAVE</span>
+        </div>
+        <p class="footer-tagline">Authentic taste cooked traditionally in clay pots and home delivered to your absolute delight.</p>
+        <div class="license-tags">
+          <span>FSSAI No: 21526080002005</span>
+          <span>MSME No: UDYAM-MH-26-1177542</span>
+        </div>
+      </div>
+      
+      <div class="footer-column link-col">
+        <h4>Explore Us</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">Our Heritage</a></li>
+          <li><a href="#menu">Digital Menu</a></li>
+          <li><a href="#physical-menu">Physical Menu Card</a></li>
+          <li><a href="#contact">WhatsApp Order Form</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column contact-col">
+        <h4>Order Online</h4>
+        <p><strong>WhatsApp Hotlines:</strong><br>+91 9975361445</p>
+        <p><strong>Email Address:</strong><br><a href="mailto:mujahidmohsin49@gmail.com">mujahidmohsin49@gmail.com</a></p>
+        <p><strong>Location:</strong><br>Home Delivery Only - Serving Your Neighborhood</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 Biryani Crave. All Rights Reserved. Slow cooked with Love & Tradition.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action Button for Mobile -->
+  <a href="https://wa.me/919975361445?text=Hi%20Biryani%20Crave%2C%20I%20would%20like%20to%20place%20an%20order." class="floating-wa-btn" id="floatingWABtn" target="_blank" aria-label="Direct WhatsApp Chat">
+    <svg viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.333 4.993L2 22l5.233-1.371a9.936 9.936 0 004.777 1.217h.005c5.505 0 9.989-4.478 9.99-9.984A9.998 9.998 0 0012.012 2zm5.781 14.19c-.244.686-1.42 1.348-1.956 1.411-.536.064-1.077.307-3.447-.627-2.85-1.125-4.688-4.013-4.831-4.202-.143-.19-1.139-1.517-1.139-2.894s.714-2.05.97-2.31c.256-.26.557-.325.74-.325h.528c.168 0 .393-.064.612.464.225.54.767 1.868.835 2.005.068.137.113.297.022.478-.09.18-.135.297-.27.458-.136.16-.285.358-.407.481-.136.137-.28.286-.12.56.16.275.71 1.171 1.523 1.895.813.725 1.5.949 1.71 1.055.21.106.333.09.458-.053.125-.144.536-.624.681-.837.143-.213.29-.18.491-.106.203.074 1.282.604 1.503.714.221.11.368.163.421.256.053.093.053.54-.191 1.226z" fill="currentColor"/></svg>
+  </a>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
